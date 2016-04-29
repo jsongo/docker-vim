@@ -23,7 +23,10 @@ USER $USER_NAME
 
 WORKDIR /home/$USER_NAME
 COPY vim.sh /home/$USER_NAME
-RUN ls -lh /home/${USER_NAME}/vim.sh
+# RUN ls -lh /home/${USER_NAME}/vim.sh
+
+# additional useful tools
+RUN apt-get -y install htop lsof netcat
 
 EXPOSE 22
 CMD ["/home/${USER_NAME}/vim.sh"]
