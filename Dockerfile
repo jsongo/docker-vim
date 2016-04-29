@@ -25,5 +25,6 @@ WORKDIR /home/$USER_NAME
 COPY vim.sh /home/$USER_NAME
 RUN ls -lh /home/${USER_NAME}/vim.sh
 
+EXPOSE 22
 CMD ["/home/${USER_NAME}/vim.sh"]
 ENTRYPOINT ["sh", "-c"]
