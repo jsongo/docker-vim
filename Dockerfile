@@ -22,7 +22,7 @@ RUN mkdir -p /home/$USER_NAME && \
 USER $USER_NAME
 
 WORKDIR /home/$USER_NAME
-COPY vim.sh /home/$USER_NAME
+COPY vim.sh .bashrc /home/$USER_NAME
 # RUN ls -lh /home/${USER_NAME}/vim.sh
 
 # additional useful tools
