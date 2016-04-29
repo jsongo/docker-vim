@@ -19,14 +19,14 @@ RUN useradd -d /home/$USER_NAME $USER_NAME && \
 RUN mkdir -p /home/$USER_NAME && \
     chown $USER_NAME:$USER_NAME /home/$USER_NAME
 
+# additional useful tools
+RUN apt-get install -y htop lsof netcat
+
 USER $USER_NAME
 
 WORKDIR /home/$USER_NAME
 COPY vim.sh .bashrc /home/$USER_NAME/
 # RUN ls -lh /home/${USER_NAME}/vim.sh
-
-# additional useful tools
-RUN apt-get install -y htop lsof netcat
 
 EXPOSE 22
 CMD ["/home/${USER_NAME}/vim.sh"]
