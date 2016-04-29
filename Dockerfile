@@ -26,7 +26,7 @@ COPY vim.sh .bashrc /home/$USER_NAME
 # RUN ls -lh /home/${USER_NAME}/vim.sh
 
 # additional useful tools
-RUN apt-get -y install htop lsof netcat
+RUN apt-get install -y htop lsof netcat
 
 EXPOSE 22
 CMD ["/home/${USER_NAME}/vim.sh"]
