@@ -8,12 +8,12 @@ RUN apt-get -y install vim-gnome
 RUN apt-get -y install sudo
 RUN ln -s /usr/bin/ctags /usr/local/bin/ctags
 
-RUN useradd -d /home/$USER_NAME $USER_NAME && \
-    adduser $USER_NAME sudo
-
 # user name
 ENV USER_NAME jsongo
 ENV TERM xterm-256color
+
+RUN useradd -d /home/$USER_NAME $USER_NAME && \
+    adduser $USER_NAME sudo
 
 RUN mkdir -p /home/$USER_NAME && \
     chown $USER_NAME:$USER_NAME /home/$USER_NAME
