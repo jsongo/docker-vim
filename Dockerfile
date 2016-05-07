@@ -9,7 +9,6 @@ RUN apt-get -y install sudo
 RUN ln -s /usr/bin/ctags /usr/local/bin/ctags
 
 RUN useradd -d /home/$USER_NAME $USER_NAME && \
-    # usermod -p initpwd $USER_NAME && \
     adduser $USER_NAME sudo
 
 # user name
@@ -20,7 +19,7 @@ RUN mkdir -p /home/$USER_NAME && \
     chown $USER_NAME:$USER_NAME /home/$USER_NAME
 
 # additional useful tools
-RUN apt-get install -y htop lsof netcat
+RUN apt-get install -y htop lsof netcat curl
 
 USER $USER_NAME
 
